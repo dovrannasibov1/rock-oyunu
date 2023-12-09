@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/icon-scissors.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>Rock, Paper, Scissors</title>
+
+</head>
+<body>
+  <div class="container original-game">
+    <header>
+      <img src="images/logo.svg" alt="logo-original-game">
+      <div class="score-div">
+        <span>score</span>
+        <div class="score" id="score-div">
+          0
+        </div>
+      </div>
+    </header>
+
+    <div class="body">
+
+      <div class="game-component playground">
+        <img src="images/bg-triangle.svg" alt="triangle">
+
+        <div onclick="runOriginalGame('paper')" class="action-component paper hoverable top-left">
+          <div class="before"></div>
+          <div class="main-circle"></div>
+          <div class="after">
+            <img src="images/icon-paper.svg" alt="Paper icon">
+          </div>
+        </div>
+        
+        <div onclick="runOriginalGame('scissors')" class="action-component scissors hoverable top-right">
+          <div class="before"></div>
+          <div class="main-circle"></div>
+          <div class="after">
+            <img src="images/icon-scissors.svg" alt="Scissors icon">
+          </div>
+        </div>
+
+        <div onclick="runOriginalGame('rock')" class="action-component rock hoverable bottom">
+          <div class="before"></div>
+          <div class="main-circle"></div>
+          <div class="after">
+            <img src="images/icon-rock.svg" alt="Rock icon">
+          </div>
+        </div>
+
+      </div>
+
+      <div class="game-component result-card hidden">
+
+        <div class="action-container user-comp">
+          <div class="winner-bg">
+            <div><div></div></div>
+          </div>
+          <span>You picked</span>
+          <div class="action-component paper ">
+            <div class="before"></div>
+            <div class="main-circle"></div>
+            <div class="after">
+              <img src="images/icon-paper.svg" alt="Paper icon">
+            </div>
+          </div>
+        </div>
+
+        <div class="result-detail">
+          <span>you -</span>
+          <button onclick="playAgain()" class="play-again-btn">play again</button>
+        </div>
+        
+        <div class="action-container house-comp winner">
+          <div class="winner-bg">
+            <div><div></div></div>
+          </div>
+          <span>The house picked</span>
+          <div class="action-component scissors">
+            <div class="before"></div>
+            <div class="main-circle"></div>
+            <div class="after">
+              <img src="images/icon-scissors.svg" alt="Paper icon">
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+    <footer>
+      <button class="rules-btn" onclick="toggleRules('original-rules-modal')">QAYDALAR</button>
+    </footer>
+    
+  </div>
+  <!-- RULES MODAL -->
+  <div class="rules-modal hidden" id="original-rules-modal">
+    <div class="rules">
+      <div class="header">
+        <span>QAYDALAR</span>
+        <div onclick="toggleRules('original-rules-modal')" class="close"><img src="images/icon-close.svg" alt=""></div>
+      </div>
+      <img src="images/image-rules.svg" alt="">
+    </div>
+  </div>
+  <div class="rules-modal hidden" id="bonus-rules-modal">
+    <div class="rules">
+      <div class="header">
+        <span>QAYDALAR</span>
+        <div onclick="toggleRules('bonus-rules-modal')" class="close"><img src="images/icon-close.svg" alt=""></div>
+      </div>
+      <img src="images/image-rules-bonus.svg" alt="">
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
